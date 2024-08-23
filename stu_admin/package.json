@@ -1,0 +1,33 @@
+{
+  "name": "stu_admin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "build:no-vue-tsc": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@types/node": "^22.1.0",
+    "axios": "^1.7.3",
+    "dayjs": "^1.11.12",
+    "element-plus": "^2.7.8",
+    "js-cookie": "^3.0.5",
+    "md5": "^2.3.0",
+    "stu_admin": "file:",
+    "tracekit": "^0.4.6",
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "sass": "^1.77.8",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.18.2",
+    "vite": "^5.3.4",
+    "vue-tsc": "^2.0.29"
+  }
+}

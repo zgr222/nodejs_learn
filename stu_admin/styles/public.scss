@@ -1,0 +1,105 @@
+/* 边距 */
+@for $i from 0 through 200 {
+  // padding
+  .pd-#{$i} {
+    padding: #{$i}px !important;
+  }
+  .pdx-#{$i} {
+    padding-left: #{$i}px !important;
+    padding-right: #{$i}px !important;
+  }
+  .pdy-#{$i} {
+    padding-top: #{$i}px !important;
+    padding-bottom: #{$i}px !important;
+  }
+  .pdt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pdr-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pdb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pdl-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+  // margin
+  .mg-#{$i} {
+    margin: #{$i}px !important;
+  }
+  .mgx-#{$i} {
+    margin-left: #{$i}px !important;
+    margin-right: #{$i}px !important;
+  }
+  .mgy-#{$i} {
+    margin-top: #{$i}px !important;
+    margin-bottom: #{$i}px !important;
+  }
+  .mgt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mgr-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mgb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .mgl-#{$i} {
+    margin-left: #{$i}px !important;
+  } 
+}
+
+/* 字体大小 */
+@for $i from 1 through 50 {
+  .fs-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+/* 宽高 */
+@for $i from 10 through 1000 {
+  .wh-#{$i} {
+    width: #{$i}px !important;
+    height: #{$i}px !important;
+  }
+}
+
+/* 宽 */
+@for $i from 10 through 1000 {
+  .w-#{$i} {
+    width: #{$i}px !important;
+  }
+}
+
+/* 高 */
+@for $i from 10 through 1000 {
+  .h-#{$i} {
+    height: #{$i}px !important;
+  }
+}
+
+/* 行高 */
+@for $i from 10 through 1000 {
+  .lh-#{$i} {
+    line-height: #{$i}px !important;
+  }
+}
+
+/* 圆角 */
+@for $i from 1 through 1000 {
+  .radius-#{$i} {
+    border-radius: #{$i}px !important;
+  }
+}
+
+/* 行溢出 */
+@for $i from 1 through 3 {
+  .tx-ov-#{$i} {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: #{$i};
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+}

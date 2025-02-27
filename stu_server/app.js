@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 const stuRouter = require('./routes/api/stu');
 const userRouter = require('./routes/api/user');
 const errRouter = require('./routes/api/error');
+const uploadRouter = require('./routes/upload');
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use('/', indexRouter);
 app.use('/stu', stuRouter);
 app.use('/user', userRouter);
 app.use('/sys', errRouter);
+app.use('/upload', uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -20,6 +20,11 @@ let routes = [
     path: '/register',
     name: 'register',
     component: () => import('@/views/login/register.vue')
+  },
+  {
+    path: '/upload',
+    name: 'upload',
+    component: () => import('@/views/upload/index.vue')
   }
 ]
 

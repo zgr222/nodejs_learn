@@ -26,6 +26,52 @@ db().then(() => {
   const server = http.createServer(app);
 
   /**
+   * Create WebSocket server
+   */
+  const wss = new WebSocket.Server({ server });
+  // WebSocket 逻辑
+  wss.on('connection', (ws) => {
+    console.log('Client connected');
+
+    // 设置心跳属性
+    ws.isAlive = true;
+
+    ws.on('message', (message) => {
+      const data = JSON.parse(message)
+      if (data.data === 'pong') {
+        // pong 响应，标记客户端仍然存活
+        console.log('pong from vue');
+        ws.isAlive = true
+      } else {
+        console.log(`Received: ${data.data}`);
+        ws.send(`Server: ${data.data}`);
+      }
+    });
+
+    ws.on('close', () => console.log('Client disconnected'));
+
+    ws.on('error', (err) => {
+      console.log('WebSocket error:', err);
+      ws.close();
+      if (pingInterval) clearInterval(pingInterval);
+    });
+  });
+  
+  // **心跳检测：定期发送 ping**
+  const pingInterval = setInterval(() => {
+    wss.clients.forEach((ws) => {
+      if (!ws.isAlive) {
+        console.log('Client did not respond, terminating connection');
+        return ws.terminate(); // 关闭未响应的客户端连接
+      }
+
+      ws.isAlive = false; // 先标记为 false，等待客户端 pong 响应
+      ws.send('ping'); // 发送 ping 请求
+    });
+  }, 10000); // 每 30 秒检测一次
+
+
+  /**
    * Listen on provided port, on all network interfaces.
    */
 
